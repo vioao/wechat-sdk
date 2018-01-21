@@ -32,12 +32,22 @@
   - 微信设备功能[x]
   - 微信发表[x]
 
-
 **项目依赖:**
 - jackson(可选，默认的序列化工具类依赖于jsckson。可自定义实现对应的序列化接口)
 - slf4j(日志用)
 - httpcomponents (可选，默认的HTTP请求工具类依赖于httpcomponents 。可自定义实现对应的HTTP请求接口)
 - junit (测试用)
 - lombok(便捷开发,provided)
+
+---
+
+**maven**
+```
+<dependency>
+  <groupId>com.github.vioao</groupId>
+  <artifactId>wechat-sdk</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 项目总体基本可用,目前还在完善改进中...
