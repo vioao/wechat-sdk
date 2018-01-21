@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        
         <!-- plugin -->
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 
@@ -33,11 +34,6 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <!-- <dependency>
-             <groupId>com.fasterxml.jackson.core</groupId>
-             <artifactId>jackson-databind</artifactId>
-             <version>${jackson.version}</version>
-         </dependency>-->
 
         <!-- httpcomponents -->
         <dependency>
@@ -45,16 +41,6 @@
             <artifactId>httpmime</artifactId>
             <version>${httpcomponents.version}</version>
         </dependency>
-        <!--<dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>${httpcomponents.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpcomponents.version}</version>
-        </dependency>-->
 
         <!-- log -->
         <dependency>

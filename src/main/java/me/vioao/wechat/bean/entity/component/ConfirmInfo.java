@@ -6,22 +6,22 @@ package me.vioao.wechat.bean.entity.component;
  * @author vioao
  */
 public class ConfirmInfo {
-    private int needConfirm; //是否需要第三方平台确认（0，不需确认，1，需要认）
-    private int alreadyConfirm; // already_confirm：是否已经确认。（0，未确认，1，已经确认）
+    private Integer needConfirm; //是否需要第三方平台确认（0，不需确认，1，需要认）
+    private Integer alreadyConfirm; // already_confirm：是否已经确认。（0，未确认，1，已经确认）
 
-    public int getNeedConfirm() {
+    public Integer getNeedConfirm() {
         return needConfirm;
     }
 
-    public void setNeedConfirm(int needConfirm) {
+    public void setNeedConfirm(Integer needConfirm) {
         this.needConfirm = needConfirm;
     }
 
-    public int getAlreadyConfirm() {
+    public Integer getAlreadyConfirm() {
         return alreadyConfirm;
     }
 
-    public void setAlreadyConfirm(int alreadyConfirm) {
+    public void setAlreadyConfirm(Integer alreadyConfirm) {
         this.alreadyConfirm = alreadyConfirm;
     }
 

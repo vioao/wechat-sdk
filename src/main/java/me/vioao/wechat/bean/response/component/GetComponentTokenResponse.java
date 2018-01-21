@@ -5,7 +5,7 @@ import me.vioao.wechat.bean.response.BaseResponse;
 
 public class GetComponentTokenResponse extends BaseResponse {
     private String componentAccessToken;
-    private int expiresIn;
+    private Integer expiresIn;
 
     public String getComponentAccessToken() {
         return componentAccessToken;
@@ -15,11 +15,11 @@ public class GetComponentTokenResponse extends BaseResponse {
         this.componentAccessToken = componentAccessToken;
     }
 
-    public int getExpiresIn() {
+    public Integer getExpiresIn() {
         return expiresIn;
     }
 
-    public void setExpiresIn(int expiresIn) {
+    public void setExpiresIn(Integer expiresIn) {
         this.expiresIn = expiresIn;
     }
 

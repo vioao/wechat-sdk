@@ -12,7 +12,7 @@ import java.util.Map;
  * @author vioao
  */
 public class MassMpNewsMessage extends MassMessage {
-    private int sendIgnoreReprint; //图文消息被判定为转载时，是否继续群发。 1为继续群发（转载），0为停止群发。 该参数默认为0
+    private Integer sendIgnoreReprint; //图文消息被判定为转载时，是否继续群发。 1为继续群发（转载），0为停止群发。 该参数默认为0
     private Map<String, String> mpnews;
 
     /**
@@ -32,11 +32,11 @@ public class MassMpNewsMessage extends MassMessage {
         this.mpnews = mpnews;
     }
 
-    public int getSendIgnoreReprint() {
+    public Integer getSendIgnoreReprint() {
         return sendIgnoreReprint;
     }
 
-    public void setSendIgnoreReprint(int sendIgnoreReprint) {
+    public void setSendIgnoreReprint(Integer sendIgnoreReprint) {
         this.sendIgnoreReprint = sendIgnoreReprint;
     }
 }

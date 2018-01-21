@@ -5,7 +5,7 @@ import me.vioao.wechat.bean.response.BaseResponse;
 
 public class CreatePreAuthCodeResponse extends BaseResponse {
     private String preAuthCode;
-    private int expiresIn;
+    private Integer expiresIn;
 
     public String getPreAuthCode() {
         return preAuthCode;
@@ -15,11 +15,11 @@ public class CreatePreAuthCodeResponse extends BaseResponse {
         this.preAuthCode = preAuthCode;
     }
 
-    public int getExpiresIn() {
+    public Integer getExpiresIn() {
         return expiresIn;
     }
 
-    public void setExpiresIn(int expiresIn) {
+    public void setExpiresIn(Integer expiresIn) {
         this.expiresIn = expiresIn;
     }
 

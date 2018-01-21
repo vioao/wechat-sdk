@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class AutoReplyRule {
     private String ruleName; //规则名称
-    private Date createTime; //创建时间
+    private Integer createTime; //创建时间
     private String replyMode; //回复模式，reply_all代表全部回复，random_one代表随机回复其中一条
     private List<ReplyInfo> keywordListInfo; //匹配的关键词列表
     private List<ReplyInfo> replyListInfo;
@@ -23,11 +23,11 @@ public class AutoReplyRule {
         this.ruleName = ruleName;
     }
 
-    public Date getCreateTime() {
+    public Integer getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
 

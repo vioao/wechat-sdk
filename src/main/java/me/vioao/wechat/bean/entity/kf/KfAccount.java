@@ -13,9 +13,9 @@ public class KfAccount {
     private String kfWx; //如果客服帐号已绑定了客服人员微信号， 则此处显示微信号
     private String inviteWx; //如果客服帐号尚未绑定微信号，但是已经发起了一个绑定邀请， 则此处显示绑定邀请的微信号
     private String inviteStatus; //邀请的状态，有等待确认“waiting”，被拒绝“rejected”， 过期“expired”
-    private long inviteExpireTime; //如果客服帐号尚未绑定微信号，但是已经发起过一个绑定邀请， 邀请的过期时间，为unix 时间戳
-    private int status; //客服在线状态，目前为：1、web 在线
-    private int acceptedCase; //客服当前正在接待的会话数
+    private Long inviteExpireTime; //如果客服帐号尚未绑定微信号，但是已经发起过一个绑定邀请， 邀请的过期时间，为unix 时间戳
+    private Integer status; //客服在线状态，目前为：1、web 在线
+    private Integer acceptedCase; //客服当前正在接待的会话数
 
     public String getKfAccount() {
         return kfAccount;
@@ -73,27 +73,43 @@ public class KfAccount {
         this.inviteStatus = inviteStatus;
     }
 
-    public long getInviteExpireTime() {
+    public Long getInviteExpireTime() {
         return inviteExpireTime;
     }
 
-    public void setInviteExpireTime(long inviteExpireTime) {
+    public void setInviteExpireTime(Long inviteExpireTime) {
         this.inviteExpireTime = inviteExpireTime;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public int getAcceptedCase() {
+    public Integer getAcceptedCase() {
         return acceptedCase;
     }
 
-    public void setAcceptedCase(int acceptedCase) {
+    public void setAcceptedCase(Integer acceptedCase) {
         this.acceptedCase = acceptedCase;
+    }
+
+    @Override
+    public String toString() {
+        return "KfAccount{" +
+                "kfAccount='" + kfAccount + '\'' +
+                ", kfNick='" + kfNick + '\'' +
+                ", kfId='" + kfId + '\'' +
+                ", kfHeadimgurl='" + kfHeadimgurl + '\'' +
+                ", kfWx='" + kfWx + '\'' +
+                ", inviteWx='" + inviteWx + '\'' +
+                ", inviteStatus='" + inviteStatus + '\'' +
+                ", inviteExpireTime=" + inviteExpireTime +
+                ", status=" + status +
+                ", acceptedCase=" + acceptedCase +
+                '}';
     }
 }
