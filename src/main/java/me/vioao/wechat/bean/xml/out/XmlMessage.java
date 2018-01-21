@@ -12,7 +12,6 @@ public abstract class XmlMessage {
     private String msgType;
 
     protected XmlMessage(String toUserName, String fromUserName, String msgType) {
-        super();
         this.toUserName = toUserName;
         this.fromUserName = fromUserName;
         this.msgType = msgType;
@@ -20,8 +19,6 @@ public abstract class XmlMessage {
 
     /**
      * 子类自定义XML.
-     *
-     * @return
      */
     public abstract String subXml();
 
@@ -38,16 +35,5 @@ public abstract class XmlMessage {
         sb.append(subXml());
         sb.append("</xml>");
         return sb.toString();
-    }
-
-    public boolean outputStreamWrite(OutputStream outputStream) {
-        try {
-            outputStream.write(toXml().getBytes(Const.Charset.UTF_8));
-            outputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
     }
 }

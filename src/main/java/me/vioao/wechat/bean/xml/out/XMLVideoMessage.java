@@ -1,12 +1,14 @@
 package me.vioao.wechat.bean.xml.out;
 
+import me.vioao.wechat.bean.entity.message.MsgType;
+
 public class XMLVideoMessage extends XmlMessage {
     private String mediaId;
     private String title;
     private String description;
 
     public XMLVideoMessage(String toUserName, String fromUserName, String mediaId, String title, String description) {
-        super(toUserName, fromUserName, "video");
+        super(toUserName, fromUserName, MsgType.VIDEO.name().toLowerCase());
         this.mediaId = mediaId;
         this.title = title;
         this.description = description;

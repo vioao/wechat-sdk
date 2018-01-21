@@ -3,7 +3,7 @@ package me.vioao.wechat.api.material;
 import me.vioao.wechat.Const;
 import me.vioao.wechat.bean.MediaFile;
 import me.vioao.wechat.bean.entity.material.MaterialType;
-import me.vioao.wechat.bean.response.material.VideoUrlResponse;
+import me.vioao.wechat.bean.response.media.VideoUrlResponse;
 import me.vioao.wechat.bean.response.media.MediaResponse;
 import me.vioao.wechat.utils.Params;
 import me.vioao.wechat.utils.client.HttpUtil;
@@ -12,25 +12,22 @@ import java.io.File;
 import java.util.Map;
 
 /**
- * 临时素材.
+ * 临时素材:
  * 1、临时素材media_id是可复用的。
  * 2、媒体文件在微信后台保存时间为3天，即3天后media_id失效。
  * 3、上传临时素材的格式、大小限制与公众平台官网一致。
- * 图片（image）: 2M，支持PNG\JPEG\JPG\GIF格式
- * 语音（voice）：2M，播放长度不超过60s，支持AMR\MP3格式
- * 视频（video）：10MB，支持MP4格式
- * 缩略图（thumb）：64KB，支持JPG格式
  * 4、需使用https调用本接口。
  *
  * @author vioao
  */
 public class TemporaryMediaApi {
-    private static final String UPLOAD = Const.Uri.API_URI + "/cgi-bin/media/uploadTemporary";
+    private static final String UPLOAD = Const.Uri.API_URI + "/cgi-bin/media/upload";
     private static final String GET = Const.Uri.API_URI + "/cgi-bin/media/get";
     private static final String JS_SDK_GET = Const.Uri.API_URI + "/cgi-bin/media/get/jssdk";
 
     /**
      * 上传图片临时素材.
+     * 图片（image）: 2M，支持PNG\JPEG\JPG\GIF格式.
      */
     public static MediaResponse uploadImg(String accessToken, File file) {
         return upload(accessToken, MaterialType.IMAGE.name().toLowerCase(), file);
@@ -38,13 +35,15 @@ public class TemporaryMediaApi {
 
     /**
      * 上传语音临时素材.
+     * 语音（voice）：2M，播放长度不超过60s，支持AMR\MP3格式
      */
     public static MediaResponse uploadVoice(String accessToken, File file) {
         return upload(accessToken, MaterialType.VOICE.name().toLowerCase(), file);
     }
 
     /**
-     * 上传缩略图临时素材.
+     * 上传视频临时素材.
+     * 视频（video）：10MB，支持MP4格式
      */
     public static MediaResponse uploadVideo(String accessToken, File file) {
         return upload(accessToken, MaterialType.VIDEO.name().toLowerCase(), file);
@@ -52,6 +51,7 @@ public class TemporaryMediaApi {
 
     /**
      * 上传缩略图临时素材.
+     * 缩略图（thumb）：64KB，支持JPG格式
      */
     public static MediaResponse uploadThumb(String accessToken, File file) {
         return upload(accessToken, MaterialType.THUMB.name().toLowerCase(), file);

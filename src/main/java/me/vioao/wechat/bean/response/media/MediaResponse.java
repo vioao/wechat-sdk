@@ -1,6 +1,7 @@
 package me.vioao.wechat.bean.response.media;
 
 
+import me.vioao.wechat.bean.entity.material.MaterialType;
 import me.vioao.wechat.bean.response.BaseResponse;
 
 /**
@@ -13,6 +14,7 @@ public class MediaResponse extends BaseResponse {
     // 媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb），图文消息（news）
     private String type;
     private String mediaId; // 媒体文件/图文消息上传后获取的唯一标识
+    private String thumbMediaId; // 上传thumb返回的唯一标识[坑爹的腾讯、接口的都不统一]
     private Long createdAt; // 媒体文件上传时间
     private String url;// 图片上传后返回的url地址
 
@@ -33,6 +35,9 @@ public class MediaResponse extends BaseResponse {
     }
 
     public String getMediaId() {
+        if (MaterialType.THUMB.name().equalsIgnoreCase(this.type) && (mediaId == null || mediaId.length() == 0)) {
+            return thumbMediaId;
+        }
         return mediaId;
     }
 
@@ -48,11 +53,19 @@ public class MediaResponse extends BaseResponse {
         this.createdAt = createdAt;
     }
 
+    public String getThumbMediaId() {
+        return thumbMediaId;
+    }
+
+    public void setThumbMediaId(String thumbMediaId) {
+        this.thumbMediaId = thumbMediaId;
+    }
+
     @Override
     public String toString() {
         return "MediaResponse{"
                 + "type='" + type + '\''
-                + ", mediaId='" + mediaId + '\''
+                + ", mediaId='" + getMediaId() + '\''
                 + ", createdAt=" + createdAt
                 + ", url='" + url + '\''
                 + ", errcode=" + super.getErrcode()

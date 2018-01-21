@@ -35,7 +35,7 @@ public class HttpClientBuilder {
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpClientBuilder.class);
     private static final int DEFAULT_MAX_TOTAL = 10;
     private static final int DEFAULT_MAX_PER_ROUTE = 100;
-    private static final int DEFAULT_TIME_OUT = 6000;
+    private static final int DEFAULT_TIME_OUT = 60000;
 
     private final int maxTotal; //线程池大小
     private final int timeout; //连接超时时间

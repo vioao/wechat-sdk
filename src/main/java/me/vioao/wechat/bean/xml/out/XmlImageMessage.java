@@ -1,10 +1,12 @@
 package me.vioao.wechat.bean.xml.out;
 
+import me.vioao.wechat.bean.entity.message.MsgType;
+
 public class XmlImageMessage extends XmlMessage {
     private String mediaId;
 
     public XmlImageMessage(String toUserName, String fromUserName, String mediaId) {
-        super(toUserName, fromUserName, "image");
+        super(toUserName, fromUserName, MsgType.IMAGE.name().toLowerCase());
         this.mediaId = mediaId;
     }
 

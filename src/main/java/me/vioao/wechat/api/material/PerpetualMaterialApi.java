@@ -194,7 +194,7 @@ public class PerpetualMaterialApi {
      * @param accessToken 调用凭证.
      * @return
      */
-    public static MaterialCountResponse getMaterialcount(String accessToken) {
+    public static MaterialCountResponse getMaterialCount(String accessToken) {
         Map<String, String> params = Params.create("access_token", accessToken).get();
         return HttpUtil.getJsonBean(GET_MATERIAL_COUNT, params, MaterialCountResponse.class);
     }
@@ -207,7 +207,7 @@ public class PerpetualMaterialApi {
      * @param offset      从全部素材的该偏移位置开始返回，0表示从第一个素材 返回
      * @param count       返回素材的数量，取值在1到20之间
      */
-    public static MaterialBatchGetResponse batchgetMaterial(String accessToken, String type, int offset,
+    public static MaterialBatchGetResponse batchGetMaterial(String accessToken, String type, int offset,
                                                             int count) {
         String data = "{\"type\":\"" + type + "\",\"offset\":" + offset + ",\"count\":" + count + "}";
         Map<String, String> params = Params.create("access_token", accessToken).get();

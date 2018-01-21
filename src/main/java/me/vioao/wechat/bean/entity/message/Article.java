@@ -22,7 +22,7 @@ public class Article {
     private String content;
 
     private String digest; // 图文消息的描述，如本字段为空，则默认抓取正文前64个字
-    private String showCoverPic; // 是否显示封面，1为显示，0为不显示
+    private Integer showCoverPic; // 是否显示封面，1为显示，0为不显示
     private Integer needOpenComment;// 是否打开评论，0不打开，1打开
     private Integer onlyFansCanComment;// 是否粉丝才可评论，0所有人可评论，1粉丝才可评论
 
@@ -90,11 +90,11 @@ public class Article {
         this.digest = digest;
     }
 
-    public String getShowCoverPic() {
+    public Integer getShowCoverPic() {
         return showCoverPic;
     }
 
-    public void setShowCoverPic(String showCoverPic) {
+    public void setShowCoverPic(Integer showCoverPic) {
         this.showCoverPic = showCoverPic;
     }
 
@@ -107,7 +107,7 @@ public class Article {
                 ", contentSourceUrl='" + contentSourceUrl + '\'' +
                 ", content='" + content + '\'' +
                 ", digest='" + digest + '\'' +
-                ", showCoverPic='" + showCoverPic + '\'' +
+                ", showCoverPic=" + showCoverPic +
                 ", needOpenComment=" + needOpenComment +
                 ", onlyFansCanComment=" + onlyFansCanComment +
                 '}';

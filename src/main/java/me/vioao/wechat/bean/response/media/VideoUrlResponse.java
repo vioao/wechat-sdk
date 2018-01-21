@@ -1,4 +1,4 @@
-package me.vioao.wechat.bean.response.material;
+package me.vioao.wechat.bean.response.media;
 
 
 import me.vioao.wechat.bean.response.BaseResponse;

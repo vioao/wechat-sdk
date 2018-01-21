@@ -47,4 +47,14 @@ public class MaterialBatchGetResultItem {
         this.updateTime = updateTime;
     }
 
+    @Override
+    public String toString() {
+        return "MaterialBatchGetResultItem{" +
+                "mediaId='" + mediaId + '\'' +
+                ", content=" + content +
+                ", name='" + name + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

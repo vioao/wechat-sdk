@@ -1,5 +1,7 @@
 package me.vioao.wechat.bean.xml.out;
 
+import me.vioao.wechat.bean.entity.message.MsgType;
+
 import java.util.List;
 
 public class XMLNewsMessage extends XmlMessage {
@@ -12,22 +14,21 @@ public class XMLNewsMessage extends XmlMessage {
      */
     public XMLNewsMessage(String toUserName, String fromUserName,
                           List<Article> articles) {
-        super(toUserName, fromUserName, "news");
+        super(toUserName, fromUserName, MsgType.NEWS.name().toLowerCase());
         this.articles = articles;
     }
 
     @Override
     public String subXml() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<ArticleCount>" + articles.size() + "</ArticleCount>");
+        sb.append("<ArticleCount>").append(articles.size()).append("</ArticleCount>");
         sb.append("<Articles>");
         for (Article a : articles) {
-            sb.append("<item>");
-            sb.append("<Title><![CDATA[" + (a.title == null ? "" : a.title) + "]]></Title>");
-            sb.append("<Description><![CDATA[" + (a.description == null ? "" : a.description) + "]]></Description>");
-            sb.append("<PicUrl><![CDATA[" + (a.picurl == null ? "" : a.picurl) + "]]></PicUrl>");
-            sb.append("<Url><![CDATA[" + (a.url == null ? "" : a.url) + "]]></Url>");
-            sb.append("</item>");
+            sb.append("<item>").append("<Title><![CDATA[").append(a.title == null ? "" : a.title).append("]]></Title>")
+                    .append("<Description><![CDATA[").append(a.description == null ? "" : a.description)
+                    .append("]]></Description>")
+                    .append("<PicUrl><![CDATA[").append(a.picurl == null ? "" : a.picurl).append("]]></PicUrl>")
+                    .append("<Url><![CDATA[").append(a.url == null ? "" : a.url).append("]]></Url>").append("</item>");
         }
         sb.append("</Articles>");
         return sb.toString();

@@ -1,5 +1,7 @@
 package me.vioao.wechat.bean.xml.out;
 
+import me.vioao.wechat.bean.entity.message.MsgType;
+
 public class XmlMusicMessage extends XmlMessage {
     private String title;
     private String description;
@@ -8,8 +10,6 @@ public class XmlMusicMessage extends XmlMessage {
     private String thumbMediaId;
 
     /**
-     * @param toUserName
-     * @param fromUserName
      * @param title        [可以为空]
      * @param description  [可以为空]
      * @param musicUrl     [可以为空] 音乐链接
@@ -18,7 +18,7 @@ public class XmlMusicMessage extends XmlMessage {
      */
     public XmlMusicMessage(String toUserName, String fromUserName, String title, String description,
                            String musicUrl, String hqMusicUrl, String thumbMediaId) {
-        super(toUserName, fromUserName, "music");
+        super(toUserName, fromUserName, MsgType.MUSIC.name().toLowerCase());
         this.title = title;
         this.description = description;
         this.musicUrl = musicUrl;
@@ -28,14 +28,13 @@ public class XmlMusicMessage extends XmlMessage {
 
     @Override
     public String subXml() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("<Music>");
-        sb.append("<Title><![CDATA[" + (title == null ? "" : title) + "]]></Title>");
-        sb.append("<Description><![CDATA[" + (description == null ? "" : description) + "]]></Description>");
-        sb.append("<MusicUrl><![CDATA[" + (musicUrl == null ? "" : musicUrl) + "]]></MusicUrl>");
-        sb.append("<HQMusicUrl><![CDATA[" + (hqMusicUrl == null ? "" : hqMusicUrl) + "]]></HQMusicUrl>");
-        sb.append("<ThumbMediaId><![CDATA[" + thumbMediaId + "]]></ThumbMediaId>");
-        sb.append("</Music>");
-        return sb.toString();
+        String sb = "<Music>" +
+                "<Title><![CDATA[" + (title == null ? "" : title) + "]]></Title>" +
+                "<Description><![CDATA[" + (description == null ? "" : description) + "]]></Description>" +
+                "<MusicUrl><![CDATA[" + (musicUrl == null ? "" : musicUrl) + "]]></MusicUrl>" +
+                "<HQMusicUrl><![CDATA[" + (hqMusicUrl == null ? "" : hqMusicUrl) + "]]></HQMusicUrl>" +
+                "<ThumbMediaId><![CDATA[" + thumbMediaId + "]]></ThumbMediaId>" +
+                "</Music>";
+        return sb;
     }
 }

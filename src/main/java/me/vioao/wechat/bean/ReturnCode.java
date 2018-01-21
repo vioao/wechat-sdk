@@ -70,7 +70,7 @@ public class ReturnCode {
             put(40122, "不合法的库存数量");
             put(40124, "会员卡设置查过限制的 custom_field字段");
             put(40127, "卡券被用户删除或转赠中");
-            put(40130, "不合法的openid列表长度, 长度至少大于2个");//invalid openid list size, at least two openid
+            put(40130, "不合法的openid列表长度, 长度至少大于2个");
             put(41001, "缺少access_token参数");
             put(41002, "缺少appid参数");
             put(41003, "缺少refresh_token参数");
@@ -111,8 +111,8 @@ public class ReturnCode {
             put(45016, "系统分组，不允许修改");
             put(45017, "分组名字过长");
             put(45018, "分组数量超过上限");
-            put(45027, "模板与所选行业不符");//template conflict with industry
-            put(45028, "没有群发配额");//has no masssend quota
+            put(45027, "模板与所选行业不符");
+            put(45028, "没有群发配额");
             put(45030, "该cardid无接口权限");
             put(45031, "库存为0");
             put(45033, "用户领取次数超过限制get_limit");
@@ -134,14 +134,14 @@ public class ReturnCode {
             put(49003, "传入的openid不属于此AppID");
             put(50001, "用户未授权该api");
             put(50002, "用户受限，可能是违规后接口被封禁");
-            put(61451, "参数错误(invalid parameter)");
-            put(61452, "无效客服账号(invalid kf_account)");
-            put(61453, "客服帐号已存在(kf_account exsited)");
-            put(61454, "客服帐号名长度超过限制(仅允许10个英文字符，不包括@及@后的公众号的微信号)(invalid kf_acount length)");
-            put(61455, "客服帐号名包含非法字符(仅允许英文+数字)(illegal character in kf_account)");
-            put(61456, "客服帐号个数超过限制(10个客服账号)(kf_account count exceeded)");
-            put(61457, "无效头像文件类型(invalid file type)");
-            put(61450, "系统错误(system error)");
+            put(61451, "参数错误");
+            put(61452, "无效客服账号");
+            put(61453, "客服帐号已存在");
+            put(61454, "客服帐号名长度超过限制(仅允许10个英文字符，不包括@及@后的公众号的微信号)");
+            put(61455, "客服帐号名包含非法字符(仅允许英文+数字)");
+            put(61456, "客服帐号个数超过限制(10个客服账号)");
+            put(61457, "无效头像文件类型");
+            put(61450, "系统错误");
             put(61500, "日期格式错误");
             put(65104, "门店的类型不合法，必须严格按照附表的分类填写");
             put(65105, "图片url 不合法，必须使用接口1 的图片上传接口所获取的url");
