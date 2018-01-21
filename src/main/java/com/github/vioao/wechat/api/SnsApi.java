@@ -12,16 +12,15 @@ import java.util.Map;
 
 /**
  * 网页授权.
- * WeChat DOC: https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
  *
  * @author vioao
+ * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842">WeChat DOC</a>
  */
 public class SnsApi {
 
     /**
      * 获取授权URL。
-     * 第一步：用户同意授权，获取code<br>
-     * 如果用户同意授权，页面将跳转至 redirect_uri/?code=CODE&state=STATE.
+     * 第一步：用户同意授权，获取code;如果用户同意授权，页面附带code,state跳转至redirect_uri
      */
     public static String generateOath2Url(String appId, String redirectUri, boolean detail, String state) {
         return generateOath2Url(appId, redirectUri, detail, state, null);

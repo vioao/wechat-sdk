@@ -1,21 +1,20 @@
 package com.github.vioao.wechat.api;
 
-import com.github.vioao.wechat.bean.entity.template.TemplateMessage;
-import com.github.vioao.wechat.bean.response.template.SendTemplateMsgResponse;
-import com.github.vioao.wechat.utils.client.HttpUtil;
-import com.github.vioao.wechat.utils.serialize.SerializeUtil;
 import com.github.vioao.wechat.Const;
+import com.github.vioao.wechat.bean.entity.template.TemplateMessage;
 import com.github.vioao.wechat.bean.response.BaseResponse;
 import com.github.vioao.wechat.bean.response.template.IndustryResponse;
+import com.github.vioao.wechat.bean.response.template.SendTemplateMsgResponse;
 import com.github.vioao.wechat.bean.response.template.TemplateListResponse;
 import com.github.vioao.wechat.bean.response.template.TemplateResponse;
 import com.github.vioao.wechat.utils.Params;
+import com.github.vioao.wechat.utils.client.HttpUtil;
+import com.github.vioao.wechat.utils.serialize.SerializeUtil;
 
 import java.util.Map;
 
 /**
  * 模板相关接口.
- * doc : https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433751277.
  *
  * @author vioao
  */

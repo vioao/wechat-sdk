@@ -21,8 +21,8 @@ public class CommentRequest {
      * @param msgDataId 群发返回的msg_data_id
      * @param index     多图文时，用来指定第几篇图文
      * @param begin     起始位置
-     * @param count     获取数目（>=50会被拒绝）
-     * @param type      type=0 普通评论&精选评论 type=1 普通评论 type=2 精选评论
+     * @param count     获取数目（大于等于50会被拒绝）
+     * @param type      type=0 普通评论和精选评论; type=1:普通评论 ,type=2:精选评论
      */
     public CommentRequest(String msgDataId, Integer index, Integer begin, Integer count, Integer type) {
         this.msgDataId = msgDataId;

@@ -1,13 +1,13 @@
 package com.github.vioao.wechat.api;
 
-import com.github.vioao.wechat.bean.response.menu.GetMenuResponse;
-import com.github.vioao.wechat.utils.client.HttpUtil;
 import com.github.vioao.wechat.Const;
-import com.github.vioao.wechat.bean.response.BaseResponse;
 import com.github.vioao.wechat.bean.entity.menu.MenuButtons;
+import com.github.vioao.wechat.bean.response.BaseResponse;
+import com.github.vioao.wechat.bean.response.menu.GetMenuResponse;
 import com.github.vioao.wechat.bean.response.menu.TryMatchResponse;
 import com.github.vioao.wechat.bean.response.menu.selfmenu.GetCurrentSelfMenuInfoResponse;
 import com.github.vioao.wechat.utils.Params;
+import com.github.vioao.wechat.utils.client.HttpUtil;
 import com.github.vioao.wechat.utils.serialize.SerializeUtil;
 
 import java.util.Map;
@@ -23,7 +23,6 @@ public class MenuApi {
 
     /**
      * 创建菜单.
-     * doc: https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141013
      *
      * @param accessToken 公众号的全局唯一接口调用凭据
      * @param menuJson    菜单json 数据 例如{\"button\":[{\"type\":\"click\",\"name\":\"今日歌曲\",\"key\"
@@ -32,6 +31,7 @@ public class MenuApi {
      *                    \"搜索\",\"url\":\"http://www.soso.com/\"},{\"type\":\"view\",\"name\":\"视频\",
      *                    \"url\":\"http://v.qq.com/\"},{\"type\":\"click\",\"name\":\"赞一下我们\",
      *                    \"key\":\"V1001_GOOD\"}]}]}
+     * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141013">DOC</a>
      */
     public static BaseResponse create(String accessToken, String menuJson) {
         Map<String, String> params = Params.create("access_token", accessToken).get();
