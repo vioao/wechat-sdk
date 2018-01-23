@@ -18,7 +18,7 @@ import java.util.Map;
  *
  * @author vioao
  */
-public class CustomApi {
+public class CustomServiceApi {
 
     private static final String CUSTOM_ADD = Const.Uri.API_URI + "/customservice/kfaccount/add";
 
