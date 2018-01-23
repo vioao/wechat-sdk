@@ -4,6 +4,7 @@ import com.github.vioao.wechat.Const;
 import com.github.vioao.wechat.bean.response.BaseResponse;
 import com.github.vioao.wechat.bean.response.component.*;
 import com.github.vioao.wechat.utils.Params;
+import com.github.vioao.wechat.utils.UrlUtils;
 import com.github.vioao.wechat.utils.client.HttpUtil;
 
 import java.util.Map;
@@ -14,6 +15,32 @@ import java.util.Map;
  * @author vioao
  */
 public class ComponentApi {
+
+    /**
+     * 获取用户授权页.
+     *
+     * @param componentAppId 第三方平台方appid
+     * @param preAuthCode    预授权码
+     * @param redirectUri    回调URI
+     * @param authType       要授权的帐号类型:
+     *                       1: 则商户扫码后，手机端仅展示公众号
+     *                       2: 表示仅展示小程序
+     *                       3: 表示公众号和小程序都展示
+     *                       如果为未制定,则默认小程序和公众号都展示.第三方平台开发者可以使用本字段来控制授权的帐号类型.
+     */
+    public String getComponentLoginPage(String componentAppId, String preAuthCode,
+                                        String redirectUri, String authType) {
+        return Const.Uri.MP_URI + "/cgi-bin/componentloginpage?component_appid" + componentAppId
+                + "&pre_auth_code=" + preAuthCode + "&redirect_uri=" + UrlUtils.encode(redirectUri)
+                + "&auth_type=" + authType;
+    }
+
+    public String getComponentLoginPage(String componentAppId, String preAuthCode,
+                                        String redirectUri) {
+        return Const.Uri.MP_URI + "/cgi-bin/componentloginpage?component_appid" + componentAppId
+                + "&pre_auth_code=" + preAuthCode + "&redirect_uri=" + UrlUtils.encode(redirectUri)
+                + "&auth_type=3";
+    }
 
     private static final String COMPONENT_API_QUERY_AUTH = Const.Uri.API_URI + "/cgi-bin/component/api_query_auth";
 

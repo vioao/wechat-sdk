@@ -41,10 +41,12 @@ public class MessageSendResponse extends BaseResponse {
 
     @Override
     public String toString() {
-        return "MessageSendResponse{" +
-                "type='" + type + '\'' +
-                ", msgId='" + msgId + '\'' +
-                ", msgDataId='" + msgDataId + '\'' +
-                '}';
+        return "MessageSendResponse{"
+                + "type='" + type + '\''
+                + ", msgId='" + msgId + '\''
+                + ", msgDataId='" + msgDataId + '\''
+                + ", errcode=" + super.getErrcode()
+                + ", errmsg='" + super.getErrmsg() + '\''
+                + '}';
     }
 }

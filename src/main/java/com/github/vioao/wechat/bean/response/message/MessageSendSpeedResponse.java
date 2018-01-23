@@ -30,9 +30,11 @@ public class MessageSendSpeedResponse extends BaseResponse {
 
     @Override
     public String toString() {
-        return "MessageSendSpeedResponse{" +
-                "speed='" + speed + '\'' +
-                ", realspeed='" + realspeed + '\'' +
+        return "MessageSendSpeedResponse{"
+                + "speed='" + speed + '\''
+                + ", realspeed='" + realspeed + '\''
+                + ", errcode=" + super.getErrcode()
+                + ", errmsg='" + super.getErrmsg() + '\'' +
                 '}';
     }
 }

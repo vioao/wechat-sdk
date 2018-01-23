@@ -30,9 +30,11 @@ public class MessageSendStatusResponse extends BaseResponse {
 
     @Override
     public String toString() {
-        return "MessageSendStatusResponse{" +
-                "msgId='" + msgId + '\'' +
-                ", msgStatus='" + msgStatus + '\'' +
-                '}' ;
+        return "MessageSendStatusResponse{"
+                + "msgId='" + msgId + '\''
+                + ", msgStatus='" + msgStatus + '\''
+                + ", errcode=" + super.getErrcode()
+                + ", errmsg='" + super.getErrmsg() + '\''
+                + '}';
     }
 }
