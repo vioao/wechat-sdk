@@ -1,4 +1,4 @@
-package com.github.vioao.wechat.api;
+package com.github.vioao.wechat.api.component;
 
 import com.github.vioao.wechat.Const;
 import com.github.vioao.wechat.bean.response.BaseResponse;

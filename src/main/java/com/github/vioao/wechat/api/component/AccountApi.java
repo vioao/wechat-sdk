@@ -1,8 +1,8 @@
-package com.github.vioao.wechat.api;
+package com.github.vioao.wechat.api.component;
 
 import com.github.vioao.wechat.Const;
 import com.github.vioao.wechat.bean.response.BaseResponse;
-import com.github.vioao.wechat.bean.response.open.OpenResponse;
+import com.github.vioao.wechat.bean.response.component.OpenResponse;
 import com.github.vioao.wechat.utils.Params;
 import com.github.vioao.wechat.utils.client.HttpUtil;
 
@@ -21,7 +21,7 @@ import java.util.Map;
  *
  * @author vioao
  */
-public class OpenApi {
+public class AccountApi {
     private static final String CREATE = Const.Uri.API_URI + "/cgi-bin/open/create";
 
     /**

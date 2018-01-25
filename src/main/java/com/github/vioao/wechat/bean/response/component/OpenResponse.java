@@ -1,4 +1,4 @@
-package com.github.vioao.wechat.bean.response.open;
+package com.github.vioao.wechat.bean.response.component;
 
 import com.github.vioao.wechat.bean.response.BaseResponse;
 
