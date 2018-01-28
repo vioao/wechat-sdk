@@ -1,14 +1,16 @@
 package com.github.vioao.wechat.api;
 
-import com.github.vioao.wechat.bean.response.kf.KfListResponse;
-import com.github.vioao.wechat.bean.response.kf.WaitCaseResponse;
 import com.github.vioao.wechat.Const;
-import com.github.vioao.wechat.bean.response.BaseResponse;
 import com.github.vioao.wechat.bean.entity.kf.Session;
+import com.github.vioao.wechat.bean.entity.message.msg.Message;
+import com.github.vioao.wechat.bean.response.BaseResponse;
+import com.github.vioao.wechat.bean.response.kf.KfListResponse;
 import com.github.vioao.wechat.bean.response.kf.MsgRecordResponse;
 import com.github.vioao.wechat.bean.response.kf.SessionListResponse;
+import com.github.vioao.wechat.bean.response.kf.WaitCaseResponse;
 import com.github.vioao.wechat.utils.Params;
 import com.github.vioao.wechat.utils.client.HttpUtil;
+import com.github.vioao.wechat.utils.serialize.SerializeUtil;
 
 import java.io.File;
 import java.util.Map;
@@ -171,4 +173,22 @@ public class CustomServiceApi {
         return HttpUtil.getJsonBean(MSG_RECORD_GET_LIST, params, MsgRecordResponse.class);
     }
 
+
+    private static final String SEND_MSG = Const.Uri.API_URI + "/cgi-bin/message/custom/send";
+
+    /**
+     * 发送客服消息.
+     */
+    public static BaseResponse sendMsg(String accessToken, String messageJson) {
+        Map<String, String> params = Params.create("access_token", accessToken).get();
+        return HttpUtil.postJsonBean(SESSION_CLOSE, params, messageJson, BaseResponse.class);
+    }
+
+    /**
+     * 发送客服消息.
+     */
+    public static BaseResponse sendMsg(String access_token, Message message) {
+        String data = SerializeUtil.beanToJson(message);
+        return sendMsg(access_token, data);
+    }
 }

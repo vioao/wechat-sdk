@@ -32,7 +32,7 @@ public class SnsApi {
      *                    服务方的appid，在申请创建公众号服务成功后，可在公众号服务详情页找到
      * @return 授权URL
      */
-    public static String generateOath2Url(String appId, String redirectUri, boolean detail, String state) {
+    public static String getOath2Url(String appId, String redirectUri, boolean detail, String state) {
         StringBuilder sb = new StringBuilder();
         sb.append(Const.Uri.OPEN_URI + "/connect/oauth2/authorize?")
                 .append("appid=").append(appId)
@@ -74,7 +74,7 @@ public class SnsApi {
         return HttpUtil.getJsonBean(SNS_OAUTH2_REFRESH_TOKEN, params, SnsTokenResponse.class);
     }
 
-    private static final String SNS_USER_INFO = Const.Uri.API_URI + "/sns/userInfo";
+    private static final String SNS_USER_INFO = Const.Uri.API_URI + "/sns/getUserInfo";
 
     /**
      * 拉取用户信息(需scope为 snsapi_userinfo).
@@ -83,7 +83,7 @@ public class SnsApi {
      * @param openid      用户的唯一标识
      * @param lang        国家地区语言版本，zh_CN 简体，zh_TW 繁体，en 英语
      */
-    public static UserResponse userInfo(String accessToken, String openid, String lang) {
+    public static UserResponse getUserInfo(String accessToken, String openid, String lang) {
         Map<String, String> params = Params.create("access_token", accessToken).put("openid", openid)
                 .put("lang", lang).get();
         return HttpUtil.getJsonBean(SNS_USER_INFO, params, UserResponse.class);
@@ -92,8 +92,8 @@ public class SnsApi {
     /**
      * 拉取用户信息(需scope为 snsapi_userinfo).
      */
-    public static UserResponse userInfo(String accessToken, String openid) {
-        return userInfo(accessToken, openid, "zh_CN");
+    public static UserResponse getUserInfo(String accessToken, String openid) {
+        return getUserInfo(accessToken, openid, "zh_CN");
     }
 
 

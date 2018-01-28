@@ -2,9 +2,9 @@ package com.github.vioao.wechat.api;
 
 
 import com.github.vioao.wechat.bean.entity.menu.Button;
-import com.github.vioao.wechat.bean.response.menu.GetMenuResponse;
 import com.github.vioao.wechat.bean.entity.menu.MenuButtons;
 import com.github.vioao.wechat.bean.response.BaseResponse;
+import com.github.vioao.wechat.bean.response.menu.GetMenuResponse;
 import com.github.vioao.wechat.bean.response.menu.selfmenu.GetCurrentSelfMenuInfoResponse;
 import org.junit.Assert;
 import org.junit.Test;
