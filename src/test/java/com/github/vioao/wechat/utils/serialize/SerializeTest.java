@@ -1,5 +1,6 @@
 package com.github.vioao.wechat.utils.serialize;
 
+import com.github.vioao.wechat.bean.entity.card.base.AdvancedInfo;
 import com.github.vioao.wechat.bean.entity.kf.KfAccount;
 import com.github.vioao.wechat.bean.xml.in.InMessage;
 import org.junit.Assert;
@@ -36,5 +37,12 @@ public class SerializeTest {
                 "<MsgId>1234567890123456</MsgId></xml>";
         InMessage msg = SerializeUtil.xmlToBean(xml, InMessage.class);
         Assert.assertEquals("toUser", msg.getToUserName());
+    }
+
+    @Test
+    public void testBeanToJson() {
+        AdvancedInfo advancedInfo = AdvancedInfo.builder()
+                ._abstract(AdvancedInfo.Abstract.builder().acceptCategory("a").build()).build();
+        Assert.assertEquals("{\"abstract\":{\"accept_category\":\"a\"}}", SerializeUtil.beanToJson(advancedInfo));
     }
 }

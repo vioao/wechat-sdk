@@ -1,13 +1,10 @@
 package com.github.vioao.wechat.bean.entity.poi;
 
-import lombok.Builder;
-
 /**
  * 门店信息-返回信息.
  *
  * @author vioao
  */
-@Builder
 public class BaseInfoResult extends BaseInfo {
     /**
      * 门店是否可用状态。<br>

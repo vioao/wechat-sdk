@@ -1,8 +1,5 @@
 package com.github.vioao.wechat.bean.entity.poi;
 
-
-import lombok.Builder;
-
 import java.util.List;
 
 /**
@@ -10,7 +7,6 @@ import java.util.List;
  *
  * @author vioao
  */
-@Builder
 public class BaseInfo {
     /**
      * 门店ID，修改服务信息是需要指定

@@ -4,7 +4,7 @@ import com.github.vioao.wechat.bean.ReturnCode;
 import com.github.vioao.wechat.utils.StringUtils;
 
 /**
- * 微信请求状态数据.
+ * 微信请求返回基本状态数据.
  *
  * @author vio
  */
