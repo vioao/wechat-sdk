@@ -1,9 +1,11 @@
 package com.github.vioao.wechat.api;
 
 import com.github.vioao.wechat.Const;
+import com.github.vioao.wechat.bean.entity.card.qrcode.CreateQrCodeRequest;
 import com.github.vioao.wechat.bean.entity.card.type.*;
 import com.github.vioao.wechat.bean.response.BaseResponse;
 import com.github.vioao.wechat.bean.response.card.CreateCardResponse;
+import com.github.vioao.wechat.bean.response.card.CreateQrCodeResponse;
 import com.github.vioao.wechat.utils.Params;
 import com.github.vioao.wechat.utils.client.HttpUtil;
 import com.github.vioao.wechat.utils.serialize.SerializeUtil;
@@ -174,5 +176,26 @@ public class CardApi {
 
     private static final String CREATE_QRCODE = Const.Uri.API_URI + "/card/qrcode/create";
 
+    /**
+     * 创建二维码接口.
+     *
+     * @param accessToken accessToken 接口调用凭证
+     * @param request     request     创建二维码请求参数
+     * @return {@link CreateQrCodeResponse}
+     */
+    public static CreateQrCodeResponse createQrCode(String accessToken, CreateQrCodeRequest request) {
+        return createQrCode(accessToken, SerializeUtil.beanToJson(request));
+    }
 
+    /**
+     * 创建二维码接口.
+     *
+     * @param accessToken accessToken 接口调用凭证
+     * @param json        json        创建二维码请求json字符串
+     * @return {@link CreateQrCodeResponse}
+     */
+    public static CreateQrCodeResponse createQrCode(String accessToken, String json) {
+        Map<String, String> params = Params.create("access_token", accessToken).get();
+        return HttpUtil.postJsonBean(CREATE_QRCODE, params, json, CreateQrCodeResponse.class);
+    }
 }
