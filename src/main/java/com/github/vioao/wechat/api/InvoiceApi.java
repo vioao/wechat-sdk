@@ -12,7 +12,7 @@ import com.github.vioao.wechat.utils.serialize.SerializeUtil;
 import java.util.Map;
 
 /**
- * 发票API。
+ * 发票API.
  *
  * @author vioao
  */

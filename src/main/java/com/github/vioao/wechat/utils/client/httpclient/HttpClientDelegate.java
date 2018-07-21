@@ -1,7 +1,7 @@
 package com.github.vioao.wechat.utils.client.httpclient;
 
-import com.github.vioao.wechat.bean.MediaFile;
 import com.github.vioao.wechat.Const;
+import com.github.vioao.wechat.bean.MediaFile;
 import com.github.vioao.wechat.utils.client.HttpDelegate;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -133,7 +133,7 @@ public class HttpClientDelegate implements HttpDelegate {
             int status = response.getStatusLine().getStatusCode();
             if (status >= 200 && status < 300) {
                 HttpEntity entity = response.getEntity();
-                String str = EntityUtils.toString(entity);
+                String str = EntityUtils.toString(entity,"UTF-8");
                 LOGGER.debug("Get response: " + str);
                 return str;
             } else {

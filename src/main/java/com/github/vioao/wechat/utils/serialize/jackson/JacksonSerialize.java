@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.github.vioao.wechat.Const;
 import com.github.vioao.wechat.utils.serialize.SerializeDelegate;
@@ -21,14 +22,18 @@ import java.io.IOException;
  */
 public class JacksonSerialize implements SerializeDelegate {
     private static final Logger LOGGER = LoggerFactory.getLogger(JacksonSerialize.class);
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-    private static final XmlMapper XML_MAPPER = new XmlMapper();
+    private static final ObjectMapper OBJECT_MAPPER;
+    private static final XmlMapper XML_MAPPER;
 
     static {
+        OBJECT_MAPPER = new ObjectMapper();
         OBJECT_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         OBJECT_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
+        JacksonXmlModule module = new JacksonXmlModule();
+        module.setDefaultUseWrapper(false);
+        XML_MAPPER  = new XmlMapper(module);
         XML_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
         XML_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         XML_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
